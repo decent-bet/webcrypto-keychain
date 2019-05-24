@@ -63,7 +63,13 @@ export class KeyStore implements IKeyStore {
         const record = await this.db.table('keys').get(name)
         return record && record.value ? record.value : null
     }
-
+    /**
+     * Gets all variables from store
+     */
+    public async getAllVariables(): Promise<string[]> {
+        const records = await this.db.table('keys').toArray();
+        return records.map(i => i.id);
+    }
     /**
      * Clears a variable
      * @param name Variable name to return
