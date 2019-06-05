@@ -1,16 +1,19 @@
 {
     "compilerOptions": {
+        "baseUrl": ".",
+        "paths": { "*": ["types/*"] },
         "module": "commonjs",
-        "esModuleInterop": true,
-        "target": "es2017",
-        "noImplicitAny": false,
+        "target": "esnext",
         "moduleResolution": "node",
         "sourceMap": false,
         "outDir": "lib",
-        "baseUrl": ".",
-        "paths": {
-            "*": ["node_modules/*", "src/types/*"]
-        }
+        "removeComments": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "preserveConstEnums": true,
+        "emitDecoratorMetadata": true,
+        "declaration": true,
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules", "**/*.spec.ts"]
